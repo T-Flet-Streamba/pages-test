@@ -1,0 +1,65 @@
+.DS_Store
+bin
+obj
+csx
+.vs
+edge
+Publish
+.vscode/
+papertrail_*.json
+token.json
+lmr*.json
+diff_live_dev.json
+diff_live_dev.txt
+mr_endpoint.json
+mr_endpoint.txt
+*.swp
+.ipynb_checkpoints
+.log
+
+*.user
+*.suo
+*.cscfg
+*.Cache
+project.lock.json
+
+/packages
+/TestResults
+
+/tools/NuGet.exe
+/App_Data
+/secrets
+/data
+.secrets
+appsettings.json
+local.settings.json
+
+node_modules
+dist
+
+# Local python packages
+.python_packages/
+
+# Python Environments
+.env
+.venv
+env/
+venv/
+ENV/
+env.bak/
+venv.bak/
+
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Azurite artifacts
+__blobstorage__
+__queuestorage__
+__azurite_db*__.json
+.gpt_venv
+
+# JetBrains
+
+.idea/

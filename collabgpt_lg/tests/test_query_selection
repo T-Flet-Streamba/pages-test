@@ -1,0 +1,123 @@
+# # Container events by ID
+        # ('CHEVRON', 'What is the status of container 10272?', 'container_events_by_id'), # true id
+        ('Shell UK', 'Tell me about SAT602', ['container_events_by_id']),
+        # ('CHEVRON', 'MPS-C1108-352', 'container_events_by_id'), # true id, different pattern
+        ('CHEVRON', 'QUEU2210373', 'container_events_by_id'), # true id, pattern which overlaps with shipments and projects
+        # ('CHEVRON', 'Where was container 654008 before its current location?', 'container_events_by_id'),
+        # ('CHEVRON', 'When was container 10272 last put on a ship?', 'container_events_by_id'),
+        # ('CHEVRON', 'What was on the backload for CXTU1157532?', ['container_events_by_id', 'find_voyage_cargo_manifests']),
+        #
+        # # Container events AND hire info
+        ('ExxonMobilGuyana', 'Tell me about 104101', ['container_events_by_id', 'hired_containers']),
+        # ('ExxonMobilGuyana', 'Where is ccu 13648?', ['cargo_events_by_id', 'hired_containers']),
+        #
+        # # Global search
+        # ('CHEVRON', 'where is the delo silver?', ['global_search', None]),
+        ('CHEVRON', 'use the global search to find a pump and count how many results there are for each object type', ['global_search', 'process_dataset_with_sql']),  # with SQL processing
+        # ('CHEVRON', 'look for items with small felines and count results by type', ['global_search']),  # search with no results but asking for SQL processing
+        # ('CHEVRON', 'is there a plug in the supply chain?', ['global_search', None]), # also fine to ask for clarification
+        ('CHEVRON', 'CHEVRONAU26005', ['global_search', None]),
+        # ('Shell UK', 'search for jackets', ['vor_global_search']),
+        ('Shell UK', 'search for Edda', ['vor_global_search']),
+        #
+        # # Flights
+        # ('CHEVRON', 'Tell me about NC5672', ['find_flights', 'global_search']),  # by flight number
+        ('CHEVRON', 'Show me priority flights from perth in the past 2 weeks', ['find_flights']),
+        ('Shell UK', 'Tell me about SHC2-03', ['flights_by_number_or_description']),  # by flight number
+        # ('Shell UK', 'Show me flights containing jackets', ['flights_by_number_or_description']),
+        # ('ExxonMobilGuyana', 'Look for "RW1_"', ['vor_global_search']),
+        ('ExxonMobilGuyana', 'Show me flights to Prosperity containing batteries', ['vor_global_search']),
+        #
+        # # Logistics Summary
+        ('CHEVRON', 'Are there warnings for any HCR?', ['logistics_summary']),
+        #
+        # # Movement requests by ID
+        # ('CHEVRON', 'is CMR110258 dangerous?', 'find_movement_requests'),
+        # ('CHEVRON', 'does CMR112539 contain a priority item?', 'find_movement_requests'),
+        # ('CHEVRON', 'What is the ros date of LMR111233?', 'find_movement_requests'), # ROS
+        # ('CHEVRON', 'Provide status on the following CMR118823 CMR119143 CMR118503 CMR118340 CMR118393 CMR118335 CMR118382 CMR119151 CMR119352', 'find_movement_requests'),
+        #
+        # # Movement requests by description, location, or indirectly
+        # ('CHEVRON', 'Movement requests containing FDG3019', 'find_movement_requests'),
+        # ('CHEVRON', 'Count by status the movement requests from the past month containing concrete', ['find_movement_requests', 'process_dataset_with_sql']),
+        ('CHEVRON', 'Show me movement requests currently awaiting pickup (for any project etc)', 'find_movement_requests'),
+        # ('CHEVRON', 'How many LMRs were delivered to Barrow Island in the last 8 days?', 'find_movement_requests'), # by location
+        # ('CHEVRON', 'Completed GOROPS non-HCRs ex BWI in the last 3 weeks', 'find_movement_requests'), # by location with jargon and filters
+        # ('CHEVRON', 'Show me some active movement requests containing hazmats and which are high priority', 'find_movement_requests'),
+        # ('CHEVRON', 'Show me 20 movement requests with no hcrs from the past 2 months; sort them by destination', ['find_movement_requests', 'process_dataset_with_sql']),
+        # ('CHEVRON', 'Find movement requests in the last two months containing oil; how many are hcr, hazmat, or both?', ['find_movement_requests', 'process_dataset_with_sql']),  # with SQL processing
+        # ('CHEVRON', 'summarise movement requests associated with work order 766124', 'work_orders_by_id'), # through work order
+        # ('CHEVRON', 'is CMR118909 on a provisional manifest?', 'find_voyage_cargo_manifests'), # through manifests
+        # ('CHEVRON', 'Looking for a movement related to EAU-EM23288, EAU-EM23289, EAU-EM27487 or EAU-EM27529', ['find_movement_requests', 'global_search']),
+        #
+        # # Pack and Tare
+        # ('CHEVRON', 'Where is 000119570008133996?', 'pack_or_tare'),  # Pack
+        # ('CHEVRON', 'What is the destination of tare 100119570008132910?', 'pack_or_tare'),  # Tare
+        #
+        # # Priority items
+        # ('CHEVRON', 'Show me priority items to BWI with ros dates from last week.', 'find_priorities'),
+        # ('CHEVRON', 'Show me priority items related to ST400219.', 'find_priorities'),
+        ('CHEVRON', 'Count the priority items to BWI with ros dates in the last two months by mode of transport.', ['find_priorities', 'process_dataset_with_sql']),  # with SQL processing
+        #
+        # # Purchase Orders
+        ('CHEVRON', 'Tell me about PO61176756', 'find_movement_requests'),
+        # ('CHEVRON', 'what is the status of PO 61176756?', 'find_movement_requests'),
+        #
+        # # Road Transports by description
+        ('CHEVRON', 'Show me road transports in transit between Dampier and Perth.', 'find_road_transport_jobs'),
+        # ('CHEVRON', 'Show me 10 road transports in the last two weeks containing dangerous goods sorted by ROS date.', ['find_road_transport_jobs', 'process_dataset_with_sql']),
+        #
+        # # Road Transports by ID
+        # ('CHEVRON', 'Updates on SR40996?', 'find_road_transport_jobs'),
+        # ('CHEVRON', 'What project and movement requests is SR43579 about?', 'find_road_transport_jobs'),
+        #
+        # # Shipments by description (project, order reference, dates, or content)
+        # ('CHEVRON', 'where are the shipments with oil for GOROPS?', ['find_shipments', 'global_search']), # by project AND content
+        ('CHEVRON', 'Show me shipments to Perth carrying more than 5 tons', ['find_shipments', 'global_search']), # by location and weight
+        ('CHEVRON', 'Show me shipments to from the UK in the past month', None), # refuse by country
+        # ('CHEVRON', 'Tell me shipments with the container DRYU2593103', ['find_shipments', 'global_search']), # by container
+        # ('CHEVRON', 'Tell me shipments in transit that contain oil', ['find_shipments']), # by status and content
+        # ('CHEVRON', 'Show me shipments related to TAR108', 'find_shipments'),  # by project alias
+        # ('CHEVRON', 'How many shipments containing documents arrived in the last 2 months?', 'find_shipments'),
+        # ('CHEVRON', 'List 15 shipments between 05/01/2026 and 16/03/2026 sorted by ROS date', ['find_shipments', 'process_dataset_with_sql']),  # by date
+        #
+        # # Shipments by ID
+        # ('CHEVRON', 'can you tell me about shipment number 70270062597131?', 'find_shipments'),
+        # ('ExxonMobilGuyana', 'Tell me about SEDC1387185', 'vor_global_search'),
+        #
+        # # Transfer Requests
+        ('ExxonMobilGuyana', 'Show me active transfer requests to Expro', ['vor_global_search', 'process_dataset_with_sql']),
+        #
+        # # Typo catching pre-tools (for plausible but wrong refs the user may be asked for typos after tools instead)
+        # ('CHEVRON', 'Tell me about WO1234567', None),
+        #
+        # # Vessels
+        # ('CHEVRON', 'What is skimmertide\'s schedule this week?', ['find_voyage_cargo_manifests', None]),
+        # ('CHEVRON', 'Show me the vessel schedule', None),
+        #
+        # # Voyages/Manifests by description
+        # ('CHEVRON', 'I\'m looking for a provisional manifest containing PRIORITY GORGON FREIGHT', ['find_voyage_cargo_manifests', 'global_search']),
+        ('CHEVRON', 'Show me 15 voyages to Barrow Island in the past 2 months with deck utilisation over 90% sorted by it', ['find_voyage_cargo_manifests', 'process_dataset_with_sql']),  # by destination and deck utilisation
+        # ('CHEVRON', 'Show me hcr voyages arrived at Dampier in the past month', ['find_voyage_cargo_manifests']),  # by (eta) date
+        # ('CHEVRON', 'Show me the GOROPS shipments on non-provisional manifests', ['find_voyage_cargo_manifests', 'global_search']), # by project and provisional
+        # ('CHEVRON', 'Compute the average and total weight of GOROPS shipments on non-provisional manifests', ['find_voyage_cargo_manifests', 'global_search', 'process_dataset_with_sql']),  # with SQL processing
+        # ('CHEVRON', 'Show me manifests containing SBIU4404697', ['find_voyage_cargo_manifests', 'global_search']), # by container
+        # ('ExxonMobilGuyana', 'Look for Emily', ['vor_global_search']),
+        # ('Shell UK', 'Show me Valaris voyages with oil', ['vor_global_search']),
+        #
+        # # Voyages/Manifests by ID
+        # ('CHEVRON', 'list the manifest contents of aurigaastrolabedsbbwi0503', 'find_voyage_cargo_manifests'),
+        # ('CHEVRON', 'Tell me about voyage 0503', 'find_voyage_cargo_manifests'),
+        # ('Shell UK', 'What does ABZ/086/25 contain?', 'voyages_by_id'),
+        # ('Shell UK', 'Show me the two most recent stages of voyage 82', 'voyages_by_id'),
+        #
+        # # Work Orders (really movement requests, containers, pack/tare etc through them)
+        ('CHEVRON', 'show me any shipments for WO578615 which won’t make it on site by 10/02/2026', 'work_orders_by_id'),
+        # ('CHEVRON', 'tell me what packs or tares are in transit for work order 862953', 'work_orders_by_id'),
+        # ('CHEVRON', 'what containers, packs and tares are involved in WO#843999?', 'work_orders_by_id'),
+        ('ExxonMobilGuyana', 'Tell me about 120013750', ['vor_global_search']),
+        #
+        # # Misc no-tool queries
+        # ('CHEVRON', 'can you tell me about CCU hires?', None),
+        # ('CHEVRON', 'What can you do?', None),
+        # ('CHEVRON', 'Can you update CMR138821 weight from 13kg to 25kg?', None),

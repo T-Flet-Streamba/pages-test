@@ -1,0 +1,11 @@
+{
+  "scriptFile": "__init__.py",
+  "bindings": [
+    {
+      "name": "priorityitemstimer",
+      "type": "timerTrigger",
+      "direction": "in",
+      "schedule": "0 30 * * * *"
+    }
+  ]
+}
