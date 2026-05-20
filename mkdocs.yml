@@ -1,0 +1,69 @@
+site_name: vor-collabgpt-functions
+site_url: https://t-flet-streamba.github.io/pages-test/
+site_description: Canonical product and technical documentation for the VOR CollabGPT Azure Functions app.
+
+repo_url: https://github.com/T-Flet-Streamba/pages-test
+edit_uri: edit/main/docs/
+
+docs_dir: docs
+
+theme:
+  name: material
+  features:
+    - navigation.instant
+    - navigation.tracking
+    - search.suggest
+    - search.highlight
+    - content.action.edit
+  palette:
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      primary: indigo
+      accent: indigo
+      toggle:
+        icon: material/brightness-4
+        name: Switch to dark mode
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      primary: indigo
+      accent: indigo
+      toggle:
+        icon: material/brightness-7
+        name: Switch to light mode
+
+plugins:
+  - search
+
+exclude_docs: |
+  prompts/*
+
+nav:
+  - Home: index.md
+  - Product:
+      - Overview: product/overview.md
+      - Usage: product/usage.md
+      - Integrations: product/integrations.md
+      - Features:
+          - "01 — VOR AI (LangGraph HTTP)": product/feature_01_vor_ai_langgraph_http.md
+          - "02 — Entity subscription notifications": product/feature_02_entity_subscription_notifications.md
+          - "03 — CHEVRON AI search index ingestion": product/feature_03_chevron_ai_search_index_ingestion.md
+          - "04 — Logistics summary warnings HTTP": product/feature_04_logistics_summary_warnings_http.md
+          - "05 — Vessels AIS location HTTP": product/feature_05_vessels_ais_location_http.md
+          - "06 — PO shipment overdue (Flowise, dormant)": product/feature_06_po_shipment_overdue_flowise_workflow.md
+  - Technical:
+      - Architecture: technical/architecture.md
+      - Project layout: technical/project_layout.md
+      - Environment variables: technical/environment_variables.md
+      - Testing: technical/testing.md
+  - History:
+      - 2026-05-07 — VOR Search new indexes: history/2026-05-07T12-11-16_vor_search_new_indexes.md
+      - 2026-05-13 — Documentation baseline: history/2026-05-13T15-00-00_documentation_baseline_created.md
+      - 2026-05-14 — LangGraph prompts, voyages, subscriptions: history/2026-05-14T11-53-44_misc_langgraph_prompts_voyages_subscriptions.md
+  - Future:
+      - Timed and parametrised subscriptions: future/plan_timed_and_parametrised_subscriptions.md
+
+markdown_extensions:
+  - admonition
+  - tables
+  - toc:
+      permalink: true

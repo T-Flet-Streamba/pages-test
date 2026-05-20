@@ -25,4 +25,4 @@ This record follows merged work on the default integration line after [PR #366](
 
 ## Feature IDs
 
-- **01** — VOR AI (LangGraph): retrieval tool matrix and Vor Search integration surface.
+- **[01](../product/feature_01_vor_ai_langgraph_http.md)** — VOR AI (LangGraph): retrieval tool matrix and Vor Search integration surface.

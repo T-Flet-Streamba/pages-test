@@ -40,6 +40,6 @@ The HTTP layer passes `userQuery` from JSON body or query string into `run`. Res
 
 ## Technical pointers
 
-- Graph nodes and edges: `../technical/architecture.md`
+- Graph nodes and edges: [Architecture](../technical/architecture.md)
 - Endpoint classes: `collabgpt_lg/endpoints.py`, bases in `collabgpt_lg/endpoints_base.py`
 - Tests hitting deployed endpoints: `collabgpt_lg/tests/test_vorai.py` (uses env URLs `COLLAB_GPT_LG_*`)

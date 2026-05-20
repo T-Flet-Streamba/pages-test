@@ -15,6 +15,6 @@ Expand the architecture of subscriptions to support:
 
 These are technically two separate pieces of work, but both will require architecture changes, therefore worth planning and executing jointly.
 
-After time triggers are added, the non-subscription logistics summary warnings daily notifications code (Feature 04) can be removed.
+After time triggers are added, the non-subscription logistics summary warnings daily notifications code ([Feature 04](../product/feature_04_logistics_summary_warnings_http.md)) can be removed.
 
 

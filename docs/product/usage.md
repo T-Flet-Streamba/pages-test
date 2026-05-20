@@ -11,23 +11,23 @@ One **Azure Functions** host loads every function folder in the repo. Each folde
 
 ## Primary HTTP entrypoint (VOR AI)
 
-See `feature_01_vor_ai_langgraph_http.md`. Callers typically send a JSON body whose top-level key **`userQuery`** wraps the object consumed by `GraphLogisticsBot.run` in `collabgpt_lg/bot.py` (fields such as `organization`, `message`, `existingMessages`, `source`, `userId`, `userDisplayName`, `teamsId`, `threadId`).
+See [Feature 01 — VOR AI (LangGraph HTTP)](feature_01_vor_ai_langgraph_http.md). Callers typically send a JSON body whose top-level key **`userQuery`** wraps the object consumed by `GraphLogisticsBot.run` in `collabgpt_lg/bot.py` (fields such as `organization`, `message`, `existingMessages`, `source`, `userId`, `userDisplayName`, `teamsId`, `threadId`).
 
 The function `collabgpt_lg/__init__.py` also reads a query string parameter `userQuery`, as different interfaces may send it at that level.
 
 ## Other HTTP functions
 
-- **Logistics summary warnings** — `feature_04_logistics_summary_warnings_http.md`
-- **Vessels in transit / AIS** — `feature_05_vessels_ais_location_http.md`
-- **Bulk indexing (CHEVRON)** — `feature_03_chevron_ai_search_index_ingestion.md`
+- **Logistics summary warnings** — [Feature 04](feature_04_logistics_summary_warnings_http.md)
+- **Vessels in transit / AIS** — [Feature 05](feature_05_vessels_ais_location_http.md)
+- **Bulk indexing (CHEVRON)** — [Feature 03](feature_03_chevron_ai_search_index_ingestion.md)
 
 ## Timed and queue-driven functions
 
-No direct HTTP invoke; they run on schedules or queue messages. See feature docs **02**, **03**, and **06** in this folder. **06** (PO shipments timer) is **dormant**: it depended on Flowise, which has been decommissioned in favour of LangFlow; that flow was not reimplemented yet.
+No direct HTTP invoke; they run on schedules or queue messages. See [Feature 02](feature_02_entity_subscription_notifications.md), [Feature 03](feature_03_chevron_ai_search_index_ingestion.md), and [Feature 06](feature_06_po_shipment_overdue_flowise_workflow.md) in this folder. **06** (PO shipments timer) is **dormant**: it depended on Flowise, which has been decommissioned in favour of LangFlow; that flow was not reimplemented yet.
 
 ## Pointers to technical detail
 
-- Layout of folders and files: `../technical/project_layout.md`
-- Graph and agent flow: `../technical/architecture.md`
-- Configuration: `../technical/environment_variables.md`
-- Tests: `../technical/testing.md`
+- Layout of folders and files: [Project layout](../technical/project_layout.md)
+- Graph and agent flow: [Architecture](../technical/architecture.md)
+- Configuration: [Environment variables](../technical/environment_variables.md)
+- Tests: [Testing](../technical/testing.md)

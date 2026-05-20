@@ -35,6 +35,6 @@ Unsupported cases called out in prompts include subscribing on behalf of another
 
 ## Technical pointers
 
-- `../technical/architecture.md` — high-level data flow
-- `../technical/environment_variables.md` — Redis, queue, Langflow, user actions
+- [Architecture](../technical/architecture.md) — high-level data flow
+- [Environment variables](../technical/environment_variables.md) — Redis, queue, Langflow, user actions
 

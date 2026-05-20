@@ -41,7 +41,7 @@ This record follows merged work after [PR #367](https://github.com/streamba/vor-
 
 ## Documentation updates
 
-- `product/feature_01_vor_ai_langgraph_http.md` — Adura naming, voyage-number shortcut, `org_config.py`, `vor_global_search` vs typed tools
-- `product/feature_02_entity_subscription_notifications.md` — subscribeable entity types table from `apis_by_org`
-- `technical/architecture.md` — org_config split, `trim_data`, flight URL mapping, voyage shortcut, notification router prompt
-- `technical/project_layout.md` — `org_config.py` / symbol index; `docs_as_of` set to PR #369 merge time
+- [Feature 01](../product/feature_01_vor_ai_langgraph_http.md) — Adura naming, voyage-number shortcut, `org_config.py`, `vor_global_search` vs typed tools
+- [Feature 02](../product/feature_02_entity_subscription_notifications.md) — subscribeable entity types table from `apis_by_org`
+- [Architecture](../technical/architecture.md) — org_config split, `trim_data`, flight URL mapping, voyage shortcut, notification router prompt
+- [Project layout](../technical/project_layout.md) — `org_config.py` / symbol index; `docs_as_of` set to PR #369 merge time

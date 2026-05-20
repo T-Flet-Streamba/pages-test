@@ -14,5 +14,5 @@ The timer groups overdue POs by `allocatedFreightForwarder` and only auto-trigge
 
 ## Technical pointers
 
-- Legacy **Flowise** env vars (only relevant if this feature is revived or code is removed): `../technical/environment_variables.md` (`FLOWISE_*`)
-- `collabgpt_po_shipments_trigger/readme.md` in repo
+- Legacy **Flowise** env vars (only relevant if this feature is revived or code is removed): [Environment variables](../technical/environment_variables.md) (`FLOWISE_*`)
+- [`collabgpt_po_shipments_trigger/readme.md`](https://github.com/T-Flet-Streamba/pages-test/blob/main/collabgpt_po_shipments_trigger/readme.md) in repo

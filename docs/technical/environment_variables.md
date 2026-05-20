@@ -150,4 +150,4 @@ The **`FLOWISE_*`** settings are still read in `config.py` for `collabgpt_po_shi
 | `COLLAB_GPT_LG_DEV` / `COLLAB_GPT_LG_DEV_KEY` | Used in `collabgpt_lg/tests/test_vorai.py` for live HTTP tests against dev |
 | `COLLAB_GPT_LG_LIVE` / `COLLAB_GPT_LG_LIVE_KEY` | Same for live environment |
 
-These are **human-only / CI-secret** style variables; see `../technical/testing.md`.
+These are **human-only / CI-secret** style variables; see [Testing](testing.md).

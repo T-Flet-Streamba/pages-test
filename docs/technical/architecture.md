@@ -6,7 +6,7 @@
 
 The application is a **single Azure Functions host** process loading all functions. Each function is isolated at the Azure resource configuration level but shares **one codebase** and **one `config.py` import graph**. Cold start and scaling behaviour follow Azure’s consumption/premium plans.
 
-## Feature 01 — LangGraph agent (`collabgpt_lg`)
+## [Feature 01](../product/feature_01_vor_ai_langgraph_http.md) — LangGraph agent (`collabgpt_lg`)
 
 **Flow.** HTTP `main` constructs `GraphLogisticsBot`, parses `userQuery`, then `GraphLogisticsBot._run_graph` streams events from the compiled graph (`collabgpt_lg/graph.py`).
 
@@ -32,17 +32,17 @@ The application is a **single Azure Functions host** process loading all functio
 
 **Notification topic router (feature 02 in-graph).** `get_notification_topic_router_prompt` in `collabgpt_lg/prompts.py` partial-injects subscribeable entity-type names from `apis_by_org[org]` and documents unsupported subscription patterns.
 
-## Feature 02 — Subscriptions
+## [Feature 02](../product/feature_02_entity_subscription_notifications.md) — Subscriptions
 
 **Timer path** (`collabgpt_check_subscriptions/__init__.py`): for each org in `UA_NOTIFICATION_AGENT_ALLOW_LIST`, loads active subscriptions via `ActiveSubscriptions`, fetches entity payloads via org-specific API classes, diffs against Redis-backed cache, enqueues per-subscription messages to `SUBSCRIPTION_QUEUE`.
 
 **Queue path** (`collabgpt_check_subscription_queue/__init__.py`): deserialises queue JSON, calls `assess_diff` (Langflow subscription agent + LLM), updates Redis caches for past notifications and closure scheduling, emits Mixpanel events.
 
-## Feature 03 — Index ingestion
+## [Feature 03](../product/feature_03_chevron_ai_search_index_ingestion.md) — Index ingestion
 
 Timer or HTTP functions pull from **Data Enhancer** or **Redis**, map documents through the same shaping logic as interactive APIs where applicable (`FlightsByID._data_mapping`, etc.), then POST batches via `IndexUploader` to URLs from `config.ai_search.url.*_indexing`.
 
-## Feature 06 — PO shipments timer (`collabgpt_po_shipments_trigger`)
+## [Feature 06](../product/feature_06_po_shipment_overdue_flowise_workflow.md) — PO shipments timer (`collabgpt_po_shipments_trigger`)
 
 **Dormant.** This timer still exists in the repo but targeted **Flowise**, which has been **decommissioned** in favour of **LangFlow**. The PO overdue flow was **not ported** to LangFlow until it is needed again, so the function should be treated as **inactive** from a product perspective even if the schedule remains deployed.
 

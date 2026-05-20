@@ -12,15 +12,15 @@ This repository is a **single Azure Functions** Python application hosting multi
 
 | Audience | Use this documentation for |
 | -------- | --------------------------- |
-| Integrators of VOR / Collab | `usage.md`, `feature_*.md`, `integrations.md` |
-| Engineers maintaining the function app | `../technical/` |
-| Operators / SRE | Environment and triggers in `../technical/environment_variables.md`, `../technical/project_layout.md` |
+| Integrators of VOR / Collab | [Usage](usage.md), [feature docs](feature_01_vor_ai_langgraph_http.md) (01–06), [Integrations](integrations.md) |
+| Engineers maintaining the function app | [Technical documentation](../technical/project_layout.md) |
+| Operators / SRE | Environment and triggers in [Environment variables](../technical/environment_variables.md), [Project layout](../technical/project_layout.md) |
 
 ## In scope
 
 - All Python packages and Azure Function folders at the repository root (except ignored tooling paths).
 - Shared libraries under `shared/`.
-- Root tests and per-function tests as described in `../technical/testing.md`.
+- Root tests and per-function tests as described in [Testing](../technical/testing.md).
 
 ## Out of scope
 

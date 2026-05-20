@@ -24,6 +24,6 @@ The indexing and search API for these and more entities is in the [vorai-search]
 
 ## Technical pointers
 
-- `../technical/project_layout.md` — file map
-- Environment: `../technical/environment_variables.md` (`VOR_AISEARCH_*`, Data Enhancer, Redis)
+- [Project layout](../technical/project_layout.md) — file map
+- Environment: [Environment variables](../technical/environment_variables.md) (`VOR_AISEARCH_*`, Data Enhancer, Redis)
 

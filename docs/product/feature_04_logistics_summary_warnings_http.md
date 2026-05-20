@@ -4,7 +4,7 @@
 
 `collabgpt_get_ls_warnings` is an HTTP GET function that returns **logistics summary warning items** for an organisation, optionally filtered by `filter_type` and `location`, backed by Redis (`SummaryWarningsCache` in `collabgpt_get_ls_warnings/__init__.py` extending `SpecificRedisCache`).
 
-NOTE: this feature will be removed in the near future, when time-based triggers are added to subscriptions (Feature 02), as their absence is the only thing preventing replicating this functionality with them (subscriptions to the same reports but triggered by data changes are already available).
+NOTE: this feature will be removed in the near future, when time-based triggers are added to subscriptions ([Feature 02](feature_02_entity_subscription_notifications.md); see also the [future plan](../future/plan_timed_and_parametrised_subscriptions.md)), as their absence is the only thing preventing replicating this functionality with them (subscriptions to the same reports but triggered by data changes are already available).
 
 ## Primary surface
 
@@ -18,4 +18,4 @@ The main agent’s `logistics_summary` tool (`collabgpt_lg/tools.py`) uses `Logi
 ## Technical pointers
 
 - Tests: `collabgpt_get_ls_warnings/tests/test_main.py`, root `tests/test_ls_warnings.py`
-- Redis env: `../technical/environment_variables.md`
+- Redis env: [Environment variables](../technical/environment_variables.md)

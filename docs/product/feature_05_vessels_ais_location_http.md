@@ -17,4 +17,4 @@ This feature is currently only intended for Chevron, and its only use is in the 
 ## Technical pointers
 
 - `shared/cosmos.py` — AIS data access pattern
-- `../technical/environment_variables.md` — Cosmos-related configuration
+- [Environment variables](../technical/environment_variables.md) — Cosmos-related configuration
